@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox id="pane" prefHeight="750.0" prefWidth="1200.0" stylesheets="@../css/stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hadjower.hangman.controller.SetWordController">
+    <children>
+        <AnchorPane prefHeight="262.0" prefWidth="1200.0">
+            <children>
+                <ImageView fitHeight="176.0" fitWidth="392.0" layoutX="279.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="279.0">
+                    <image>
+                        <Image url="@../../assets/pictures/two_players/typePhraseLabel.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="playerBack" fitHeight="150.0" fitWidth="200.0" layoutX="279.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/pictures/two_players/bluePlayerBackground.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="playerName" alignment="CENTER" contentDisplay="CENTER" layoutX="284.0" layoutY="27.0" prefHeight="55.0" prefWidth="191.0" text="Игрок 1" textFill="WHITE">
+                    <font>
+                        <Font name="TagirCTT" size="36.0" />
+                    </font>
+                    <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                    </effect>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="192.0" prefWidth="1200.0">
+            <children>
+                <TextField id="textBoxWord" fx:id="textBox" focusTraversable="false" layoutX="293.0" layoutY="19.0" prefHeight="91.0" prefWidth="614.0" AnchorPane.leftAnchor="293.0" AnchorPane.topAnchor="19.0">
+                    <font>
+                        <Font name="TagirCTT" size="36.0" />
+                    </font>
+                </TextField>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="287.0" prefWidth="1200.0">
+            <children>
+                <ImageView fitHeight="81.0" fitWidth="280.0" layoutX="306.0" layoutY="1.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../assets/pictures/two_players/typeOrLabel.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="randBtn" contentDisplay="CENTER" layoutX="622.0" layoutY="1.0" mnemonicParsing="false" onAction="#random" prefHeight="81.0" prefWidth="293.0" text="Button">
+                    <effect>
+                        <ImageInput>
+                            <source>
+                                <Image url="/com/hadjower/hangman/assets/pictures/two_players/drawButton.png" />
+                            </source>
+                        </ImageInput>
+                    </effect>
+                </Button>
+                <Button fx:id="nextBtn" contentDisplay="CENTER" layoutX="769.0" layoutY="153.0" mnemonicParsing="false" onAction="#next" prefHeight="107.0" prefWidth="293.0">
+                    <effect>
+                        <ImageInput>
+                            <source>
+                                <Image url="/com/hadjower/hangman/assets/pictures/two_players/nextDisabledButton.png" />
+                            </source>
+                        </ImageInput>
+                    </effect>
+                </Button>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="306.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/pictures/two_players/max16Label.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

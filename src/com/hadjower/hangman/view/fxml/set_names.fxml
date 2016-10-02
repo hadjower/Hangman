@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox id="pane" prefHeight="750.0" prefWidth="1200.0" stylesheets="@../css/stylesheets.css"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hadjower.hangman.controller.SetNamesController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <ImageView fitHeight="176.0" fitWidth="392.0" layoutX="286.0" layoutY="27.0" pickOnBounds="true"
+                           preserveRatio="true" AnchorPane.leftAnchor="286.0">
+                    <image>
+                        <Image url="/com/hadjower/hangman/assets/pictures/two_players/whoWillHangLabel.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="157.0" prefWidth="1200.0">
+            <children>
+                <TextField id="textBox1" fx:id="textBox1" layoutX="293.0" layoutY="48.0" onKeyTyped="#keyTyped"
+                           prefHeight="91.0" prefWidth="614.0" promptText="Игрок 1" AnchorPane.leftAnchor="293.0"
+                           AnchorPane.topAnchor="48.0">
+                    <font>
+                        <Font name="TagirCTT" size="36.0"/>
+                    </font>
+                </TextField>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="154.0" prefWidth="1200.0">
+            <children>
+                <TextField id="textBox2" fx:id="textBox2" layoutX="293.0" layoutY="49.0" onKeyTyped="#keyTyped"
+                           prefHeight="91.0" prefWidth="614.0" promptText="Игрок 2" AnchorPane.leftAnchor="293.0"
+                           AnchorPane.topAnchor="48.0">
+                    <font>
+                        <Font name="TagirCTT" size="36.0"/>
+                    </font>
+                </TextField>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="242.0" prefWidth="1200.0">
+            <children>
+                <ImageView fx:id="continueIV" fitHeight="91.0" fitWidth="251.0" layoutX="660.0" layoutY="78.0"
+                           pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="289.0"
+                           onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed"
+                           onMouseReleased="#imgViewReleased">
+                    <image>
+                        <Image url="/com/hadjower/hangman/assets/pictures/two_players/nextButton.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="296.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="/com/hadjower/hangman/assets/pictures/two_players/max11Label.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

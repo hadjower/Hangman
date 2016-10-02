@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="750.0" prefWidth="1200.0" stylesheets="@../css/stylesheets.css"
+            fx:controller="com.hadjower.hangman.controller.ChooseCategoryController"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <HBox prefHeight="385.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="374.0" prefWidth="400.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0"
+                                onAction="#categoryClick" fx:id="geographyBtn"
+                                stylesheets="@../css/stylesheets.css">
+                            <effect>
+                                <ImageInput>
+                                    <source>
+                                        <Image url="/com/hadjower/hangman/assets/pictures/categories/geographyButton.png"/>
+                                    </source>
+                                </ImageInput>
+                            </effect>
+                            <VBox.margin>
+                                <Insets top="30.0"/>
+                            </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0"
+                                onAction="#categoryClick" fx:id="foodBtn"
+                                stylesheets="@../css/stylesheets.css">
+                            <effect>
+                                <ImageInput>
+                                    <source>
+                                        <Image url="/com/hadjower/hangman/assets/pictures/categories/foodButton.png"/>
+                                    </source>
+                                </ImageInput>
+                            </effect>
+                            <VBox.margin>
+                                <Insets top="40.0"/>
+                            </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0"
+                                onAction="#categoryClick" fx:id="filmsBtn"
+                                stylesheets="@../css/stylesheets.css">
+                            <effect>
+                                <ImageInput>
+                                    <source>
+                                        <Image url="/com/hadjower/hangman/assets/pictures/categories/filmsButton.png"/>
+                                    </source>
+                                </ImageInput>
+                            </effect>
+                            <VBox.margin>
+                                <Insets top="40.0"/>
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="120.0"/>
+                    </HBox.margin>
+                </VBox>
+                <VBox prefHeight="350.0" prefWidth="400.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0"
+                                onAction="#categoryClick" fx:id="sportBtn"
+                                stylesheets="@../css/stylesheets.css">
+                            <effect>
+                                <ImageInput>
+                                    <source>
+                                        <Image url="/com/hadjower/hangman/assets/pictures/categories/sportButton.png"/>
+                                    </source>
+                                </ImageInput>
+                            </effect>
+                            <VBox.margin>
+                                <Insets top="30.0"/>
+                            </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0"
+                                onAction="#categoryClick" fx:id="musicBtn"
+                                stylesheets="@../css/stylesheets.css">
+                            <effect>
+                                <ImageInput>
+                                    <source>
+                                        <Image url="/com/hadjower/hangman/assets/pictures/categories/musicButton.png"/>
+                                    </source>
+                                </ImageInput>
+                            </effect>
+                            <VBox.margin>
+                                <Insets top="40.0"/>
+                            </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="400.0"
+                                onAction="#categoryClick" fx:id="animalsBtn"
+                                stylesheets="@../css/stylesheets.css">
+                            <effect>
+                                <ImageInput>
+                                    <source>
+                                        <Image url="/com/hadjower/hangman/assets/pictures/categories/animalsButton.png"/>
+                                    </source>
+                                </ImageInput>
+                            </effect>
+                            <VBox.margin>
+                                <Insets top="40.0"/>
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="120.0"/>
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+    </center>
+    <bottom>
+        <BorderPane prefHeight="172.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <top>
+                <Button mnemonicParsing="false" onAction="#categoryClick" prefHeight="75.0" prefWidth="400.0"
+                        fx:id="allBtn"
+                        stylesheets="@../css/stylesheets.css" BorderPane.alignment="CENTER">
+                    <effect>
+                        <ImageInput>
+                            <source>
+                                <Image url="/com/hadjower/hangman/assets/pictures/categories/allButton.png"/>
+                            </source>
+                        </ImageInput>
+                    </effect>
+                </Button>
+            </top>
+        </BorderPane>
+    </bottom>
+    <top>
+        <BorderPane prefHeight="190.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <center>
+                <ImageView fitHeight="170.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true"
+                           BorderPane.alignment="CENTER">
+                    <image>
+                        <Image url="/com/hadjower/hangman/assets/pictures/categories/chooseCategoryLabel.png"/>
+                    </image>
+                    <BorderPane.margin>
+                        <Insets left="20.0"/>
+                    </BorderPane.margin>
+                </ImageView>
+            </center>
+        </BorderPane>
+    </top>
+</BorderPane>

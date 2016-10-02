@@ -1,0 +1,60 @@
+#pane {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: inherit;
+    -fx-background-position: bottom center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+.buttonOff {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/round/keyboardButton.png");
+}
+
+
+.buttonGuessed {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/round/keyboardGreenButton.png");
+
+}
+
+.buttonMismatched {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/round/keyboardRedButton.png");
+}
+
+.keyButton {
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-color: transparent;
+    -fx-background-size: 60 60;
+    -fx-text-fill: #60605d;
+    -fx-text-alignment: center;
+}
+
+#popUpPane {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/round/popUpBackground.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: stretch;
+    -fx-background-position: bottom center;
+}
+
+#textBox1 {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/two_players/blueTextInputBackground.png");
+    -fx-focus-traversable: false;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: inherit;
+    -fx-text-fill: #60605d;
+}
+
+#textBox2 {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/two_players/redTextInputBackground.png");
+    -fx-focus-traversable: false;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: inherit;
+    -fx-text-fill: #60605d;
+}
+
+#textBoxWord {
+    -fx-background-image: url("/com/hadjower/hangman/assets/pictures/two_players/textInputBackground.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: inherit;
+    -fx-text-fill: #60605d;
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" stylesheets="/com/hadjower/hangman/view/css/stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hadjower.hangman.controller.GameTwoController">
+    <children>
+        <ImageView fx:id="hangmanImageView" fitHeight="300.0" fitWidth="362.0" layoutX="64.0" layoutY="14.0" pickOnBounds="true">
+            <image>
+                <Image url="/com/hadjower/hangman/assets/pictures/round/Hangman00.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="player1back" fitHeight="65.0" fitWidth="290.0" layoutX="870.0" layoutY="14.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../assets/pictures/two_players/bluePlayerBackground.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="bigCount" alignment="CENTER_RIGHT" layoutX="1044.0" layoutY="79.0" prefHeight="80.0" prefWidth="105.0" text="0" textAlignment="CENTER" textFill="#60605d">
+            <font>
+                <Font name="TagirCTT" size="48.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="player2back" fitHeight="51.0" fitWidth="221.0" layoutX="939.0" layoutY="164.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../assets/pictures/two_players/redPlayerSmallBackground.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="wordLabel" alignment="BOTTOM_CENTER" contentDisplay="TEXT_ONLY" layoutX="355.0" layoutY="173.0" prefHeight="202.0" prefWidth="482.0" textAlignment="CENTER" textFill="#60605d" wrapText="true">
+            <font>
+                <Font name="TagirCTT" size="65.0" />
+            </font>
+        </Label>
+        <Pane fx:id="buttonsPane" layoutX="306.0" layoutY="375.0" prefHeight="371.0" prefWidth="592.0" />
+        <Pane id="popUpPane" fx:id="popUpPane" layoutX="306.0" layoutY="375.0" prefHeight="371.0" prefWidth="592.0" stylesheets="@../css/stylesheets.css" visible="false">
+            <children>
+                <Label fx:id="popUpLabel" alignment="CENTER" layoutX="152.0" prefHeight="90.0" prefWidth="290.0" text="Функции" textAlignment="CENTER" textFill="#60605d">
+                    <font>
+                        <Font name="TagirCTT" size="65.0" />
+                    </font>
+                </Label>
+                <ImageView fx:id="backNewBtn" fitHeight="69.0" fitWidth="224.0" layoutX="282.0" layoutY="163.0" onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed" onMouseReleased="#imgViewReleased" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../assets/pictures/round/backToPhraseButton.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="mainMenuBtn" fitHeight="69.0" fitWidth="224.0" layoutX="282.0" layoutY="260.0" onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed" onMouseReleased="#imgViewReleased" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../assets/pictures/round/backToMenuButton.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="soundOn" fitHeight="115.0" fitWidth="123.0" layoutX="77.0" layoutY="158.0" onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed" onMouseReleased="#imgViewReleased" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/pictures/two_players/soundSmallButton.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="73.0" fitWidth="121.0" layoutX="69.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/pictures/two_players/soundBottomLabel.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="popUpPlayerBack" fitHeight="51.0" fitWidth="221.0" layoutX="193.0" layoutY="91.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../assets/pictures/two_players/redPlayerSmallBackground.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="popUpPlayerName" alignment="CENTER" layoutX="206.0" layoutY="88.0" prefHeight="60.0" prefWidth="203.0" text="Игрок 2" textAlignment="CENTER" textFill="WHITE">
+                    <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                    </effect>
+                    <font>
+                        <Font name="TagirCTT" size="40.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Label fx:id="smallCount" alignment="CENTER_RIGHT" layoutX="1044.0" layoutY="215.0" prefHeight="35.0" prefWidth="105.0" text="0" textAlignment="CENTER" textFill="#60605d">
+            <font>
+                <Font name="TagirCTT" size="40.0" />
+            </font>
+        </Label>
+        <Label fx:id="player1name" alignment="CENTER" layoutX="880.0" layoutY="7.0" prefHeight="80.0" prefWidth="276.0" text="Игрок 1" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="TagirCTT" size="48.0" />
+            </font>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" />
+            </effect>
+        </Label>
+        <Label fx:id="player2name" alignment="CENTER" layoutX="948.0" layoutY="162.0" prefHeight="60.0" prefWidth="203.0" text="Игрок 2" textAlignment="CENTER" textFill="WHITE">
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" />
+            </effect>
+            <font>
+                <Font name="TagirCTT" size="40.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>
