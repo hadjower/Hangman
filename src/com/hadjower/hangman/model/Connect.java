@@ -2,6 +2,7 @@ package com.hadjower.hangman.model;
 
 import com.hadjower.hangman.view.classes.Category;
 import javafx.scene.image.Image;
+import oracle.jdbc.OracleTypes;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -20,9 +21,13 @@ public class Connect {
     public static void connect() {
         connection = null;
         try {
-            Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:src/com/hadjower/hangman/assets/words/sqlite_file.db");
+//            Class.forName("org.sqlite.JDBC");
+//            connection = DriverManager.getConnection("jdbc:sqlite:src/com/hadjower/hangman/assets/words/sqlite_file.db");
+            Class.forName("oracle.jdbc.OracleDriver");
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",
+                    "nastya", "1111");
             statement = connection.createStatement();
+
         } catch (SQLException e) {
             System.out.println("База Не Подключена!");
         } catch (ClassNotFoundException e) {
@@ -43,22 +48,26 @@ public class Connect {
     public static String getRandomWord(Category category) {
         String string = "";
         int category_id = category.getNumber() + 1;
-        try {
-            resultSet = statement.executeQuery("SELECT  * FROM phrases WHERE _id = " + getIndex(category_id));
-            string = resultSet.getString("phrase");
+        try (CallableStatement cs = connection.prepareCall("{?=call GET_RAND_WORD_BY_CAT(?)}")) {
+            cs.registerOutParameter(1, OracleTypes.VARCHAR);
+            cs.setInt(2, category_id);
+            cs.execute();
+            string = cs.getString(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return string;
     }
 
-    private static int getIndex(int i) throws SQLException {
-        resultSet = statement.executeQuery("SELECT  * FROM phrases WHERE category_id = " + i);
-        int begin = resultSet.getInt("_id");
-        resultSet = statement.executeQuery("SELECT  * FROM phrases WHERE category_id = " + (i + 1));
-        int end = resultSet.getInt("_id");
-        return (int) (Math.random()*(end - begin) + begin);
-    }
+//    private static int getIndex(int i) throws SQLException {
+//        resultSet = statement.executeQuery("SELECT  * FROM phrases WHERE category_id = " + i);
+//        resultSet.next();
+//        int begin = resultSet.getInt("id");
+//        resultSet = statement.executeQuery("SELECT  * FROM phrases WHERE category_id = " + (i + 1));
+//        resultSet.next();
+//        int end = resultSet.getInt("id");
+//        return (int) (Math.random()*(end - begin) + begin);
+//    }
 
     public static HashMap<String, List<Image>> getImageMap() throws SQLException {
         HashMap<String, List<Image>> imgs = new HashMap<>();
@@ -90,12 +99,14 @@ public class Connect {
 
     public static String getRandomWord() {
         String string = "";
-        try {
-            resultSet = statement.executeQuery("SELECT * FROM phrases ORDER BY RANDOM() LIMIT 1");
-            string = resultSet.getString("phrase");
+        try (CallableStatement cs = connection.prepareCall("{?=call GET_RAND_WORD()}")) {
+            cs.registerOutParameter(1, OracleTypes.VARCHAR);
+            cs.execute();
+            string = cs.getString(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return string;
     }
 }

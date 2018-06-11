@@ -6,9 +6,9 @@ package com.hadjower.hangman.model;
 public class TwoPlayersGameManager {
     private static TwoPlayersGameManager instance;
 
-    private Game2PLayers player1Game;
-    private Game2PLayers player2Game;
-    private Game2PLayers currentGame;
+    private Empty player1Game;
+    private Empty player2Game;
+    private Empty currentGame;
     private boolean isPlayer1Turn = true;
     private int p1Wins;
     private int p2Wins;
@@ -24,8 +24,8 @@ public class TwoPlayersGameManager {
     }
 
     public void setNames(String name1, String name2) {
-        player1Game = new Game2PLayers(name1);
-        player2Game = new Game2PLayers(name2);
+        player1Game = new Empty(name1);
+        player2Game = new Empty(name2);
     }
 
     public void startGame(String word) {

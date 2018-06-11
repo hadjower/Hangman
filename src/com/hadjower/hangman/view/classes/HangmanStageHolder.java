@@ -52,7 +52,6 @@ public class HangmanStageHolder {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public Stage getStage() {

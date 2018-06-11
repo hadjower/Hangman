@@ -5,14 +5,14 @@ import com.hadjower.hangman.view.classes.Category;
 /**
  * Created by Administrator on 09.06.2016.
  */
-public class Game1Player extends Game{
+public class Player extends Game{
     private Category category;
     private boolean isHelpUsed;
 
     private static int wins;
     private static int defeats;
 
-    public Game1Player(Category category) {
+    public Player(Category category) {
         this.category = category;
         isHelpUsed = false;
         hangmanCounter = 0;

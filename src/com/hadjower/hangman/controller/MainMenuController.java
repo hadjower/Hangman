@@ -1,9 +1,7 @@
 package com.hadjower.hangman.controller;
 
 import com.hadjower.hangman.model.Connect;
-import com.hadjower.hangman.model.Game;
-import com.hadjower.hangman.model.Game1Player;
-import com.hadjower.hangman.model.Game2PLayers;
+import com.hadjower.hangman.model.Player;
 import com.hadjower.hangman.view.classes.HangmanStageHolder;
 import com.hadjower.hangman.view.classes.Scene;
 import com.hadjower.hangman.view.classes.Sound;
@@ -12,7 +10,6 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import java.util.*;
 
@@ -67,7 +64,7 @@ public class MainMenuController {
         if (isMouseInto[getIndex(imageView)]) {
             imageView.setImage(listMap.get(imageView.getId()).get(0));
             if (imageView.equals(button1)) {
-                Game1Player.dropCounters();
+                Player.dropCounters();
                 HangmanStageHolder.getInstance().setScene(Scene.CHOOSE_CATEGORY);
             } else {
                 HangmanStageHolder.getInstance().setScene(Scene.SET_NAME);

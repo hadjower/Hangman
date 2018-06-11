@@ -12,41 +12,38 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<VBox id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
-      prefWidth="1200.0" stylesheets="@../css/stylesheets.css" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hadjower.hangman.controller.MainMenuController">
+<VBox id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" stylesheets="@../css/stylesheets.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hadjower.hangman.controller.MainMenuController">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0">
             <center>
-                <ImageView fitHeight="320.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true"
-                           BorderPane.alignment="CENTER">
+                <ImageView fitHeight="320.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                     <image>
-                        <Image url="/com/hadjower/hangman/assets/pictures/main_menu/logo.png"/>
+                        <Image url="/com/hadjower/hangman/assets/pictures/main_menu/logo.png" />
                     </image>
                 </ImageView>
             </center>
             <padding>
-                <Insets bottom="50.0" top="50.0"/>
+                <Insets bottom="50.0" top="50.0" />
             </padding>
         </BorderPane>
         <BorderPane prefHeight="100.0" prefWidth="400.0">
             <center>
-                <ImageView fx:id="button1" fitHeight="75.0" pickOnBounds="true"
-                           fitWidth="400.0" onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed"
-                           onMouseReleased="#imgViewReleased" BorderPane.alignment="CENTER">
-                    <Image url="/com/hadjower/hangman/assets/pictures/main_menu/1Players0.png"/>
+                <ImageView fx:id="button1" fitHeight="75.0" fitWidth="400.0" onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed" onMouseReleased="#imgViewReleased" pickOnBounds="true" BorderPane.alignment="CENTER">
+                   <image>
+                       <Image url="/com/hadjower/hangman/assets/pictures/main_menu/1Players0.png" />
+                   </image>
                 </ImageView>
             </center>
             <VBox.margin>
-                <Insets bottom="40.0"/>
+                <Insets bottom="40.0" />
             </VBox.margin>
         </BorderPane>
         <BorderPane prefHeight="100.0" prefWidth="200.0">
             <center>
-                <ImageView fx:id="button2" fitHeight="75.0" pickOnBounds="true"
-                           fitWidth="400.0" onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed"
-                           onMouseReleased="#imgViewReleased" BorderPane.alignment="CENTER">
-                    <Image url="/com/hadjower/hangman/assets/pictures/main_menu/2Players0.png"/>
+                <ImageView fx:id="button2" fitHeight="75.0" fitWidth="400.0" onMouseExited="#imgViewExit" onMousePressed="#imgViewPressed" onMouseReleased="#imgViewReleased" pickOnBounds="true" visible="false" BorderPane.alignment="CENTER">
+                   <image>
+                       <Image url="/com/hadjower/hangman/assets/pictures/main_menu/2Players0.png" />
+                   </image>
                 </ImageView>
             </center>
         </BorderPane>

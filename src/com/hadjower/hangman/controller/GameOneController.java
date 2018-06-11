@@ -1,6 +1,6 @@
 package com.hadjower.hangman.controller;
 
-import com.hadjower.hangman.model.Game1Player;
+import com.hadjower.hangman.model.Player;
 import com.hadjower.hangman.model.Pack;
 import com.hadjower.hangman.view.classes.*;
 import javafx.event.Event;
@@ -52,7 +52,7 @@ public class GameOneController {
     @FXML
     private ImageView hangmanImageView;
 
-    private Game1Player game;
+    private Player game;
     private List<Image> hangmanImages;    //images of Hangman for different count of mistakes
     private List<Image> categoryImages;  //Images of categories
     public static final int HANGMAN_COUNTER = 10;
@@ -175,7 +175,7 @@ public class GameOneController {
             category = Category.valueOf((int) (Math.random() * CATEGORY_AMOUNT));
         themeImgView.setImage(categoryImages.get(category.getNumber()));
 
-        game = new Game1Player(category);
+        game = new Player(category);
         game.start();
 
         wordLabel.setText(game.getHiddenWord());
@@ -265,12 +265,12 @@ public class GameOneController {
         buttonsPane.setVisible(false);
         popUpPane.setVisible(true);
         backNewBtn.setImage(imageListMap.get("backNewBtn").get(3));
-        Game1Player.increaseCounter(isWin);
+        Player.increaseCounter(isWin);
         wordLabel.setText(game.getWord());
     }
 
     private void updateCounter() {
-        lblCounter.setText(Game1Player.getWins() + "/" + Game1Player.getDefeats());
+        lblCounter.setText(Player.getWins() + "/" + Player.getDefeats());
     }
 
     //---Tool methods---

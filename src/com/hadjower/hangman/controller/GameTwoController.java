@@ -1,8 +1,7 @@
 package com.hadjower.hangman.controller;
 
-import com.hadjower.hangman.Main;
 import com.hadjower.hangman.model.Connect;
-import com.hadjower.hangman.model.Game1Player;
+import com.hadjower.hangman.model.Player;
 import com.hadjower.hangman.model.Pack;
 import com.hadjower.hangman.model.TwoPlayersGameManager;
 import com.hadjower.hangman.view.classes.*;
@@ -179,7 +178,7 @@ public class GameTwoController {
         buttonsPane.setVisible(false);
         popUpPane.setVisible(true);
         backNewBtn.setImage(imageListMap.get("newBtn").get(0));
-        Game1Player.increaseCounter(isWin);
+        Player.increaseCounter(isWin);
         wordLabel.setText(TwoPlayersGameManager.getInstance().getWord());
     }
 

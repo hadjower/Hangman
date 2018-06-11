@@ -3,10 +3,10 @@ package com.hadjower.hangman.model;
 /**
  * Created by Administrator on 09.06.2016.
  */
-public class Game2PLayers extends Game{
+public class Empty extends Game{
     private String name;
 
-    Game2PLayers(String name) {
+    Empty(String name) {
         this.name = name;
     }
 
